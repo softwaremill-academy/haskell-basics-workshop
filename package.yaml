@@ -21,9 +21,14 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- relude
 
 library:
   source-dirs: src
+
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
 
 executables:
   haskell-workshop-basic-exe:
@@ -33,6 +38,14 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -haddock
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+    - -Wno-unused-do-bind
+    - -Werror=incomplete-patterns
     dependencies:
     - haskell-workshop-basic
 
@@ -44,5 +57,14 @@ tests:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
+    - -haddock
+    - -Wall
+    - -Wcompat
+    - -Wincomplete-record-updates
+    - -Wincomplete-uni-patterns
+    - -Wredundant-constraints
+    - -Wno-unused-do-bind
+    - -Werror=incomplete-patterns
     dependencies:
     - haskell-workshop-basic
+    - hspec

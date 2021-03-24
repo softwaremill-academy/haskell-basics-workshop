@@ -1,6 +1,10 @@
 module Main where
 
-import Lib
+import qualified Hangman as H
+import Relude
 
+
+-- TODO T13
 main :: IO ()
-main = someFunc
+main = do
+  putStrLn "Zgaduj zgadula"
